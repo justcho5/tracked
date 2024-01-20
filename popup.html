@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <template id="li_template">
+      <li>
+        <div>
+          <h3 class="title">Book Title</h3>
+          <p class="numPages">Number of pages</p>
+        </div>
+        <button>Expand</button>
+        <button>Open All</button>
+        <div class="pages-container"></div>
+      </li>
+    </template>
+
+    <template id="page-template">
+      <h3>
+        <a class="page-title-url" href="#">Page Title</a>
+        <button id="focus" data-tabId="value">Focus</button>
+        <button id="delete">Delete</button>
+      </h3>
+    </template>
+
+    <h1>Books</h1>
+    <div>
+      <form>
+        <input type="text" placeholder="Topic" id="topic" required />
+        <input type="submit" id="submit" value="Add" />
+      </form>
+    </div>
+    <ul></ul>
+
+    <script src="./popup.js" type="module"></script>
+  </body>
+</html>
