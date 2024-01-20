@@ -15,7 +15,6 @@ async function init() {
 
 async function loadBooksFromStorage() {
   const { books: library } = await chrome.storage.local.get("books");
-  console.log(library);
   if (!library) {
     console.log("no books in storage");
     return [];
@@ -31,7 +30,11 @@ async function loadBooksFromStorage() {
 function handleAddBook(pages, library) {
   return () => {
     const bookTitle = document.getElementById("topic").value;
-    if (!library.filter((book) => book.title === bookTitle)) {
+    console.log(
+      "here",
+      library.filter((book) => book.title === bookTitle)
+    );
+    if (library.filter((book) => book.title === bookTitle).length === 0) {
       let newBook = {
         title: bookTitle,
         numPages: pages.length,
